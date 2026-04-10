@@ -1,0 +1,38 @@
+{# templates/auteur/nouveau.html.twig #}
+{% extends 'base.html.twig' %}
+
+{% block title %}Nouveau film{% endblock %}
+
+{% block body %}
+<div class="custom-container w-50">
+    <div class="film-detail">
+        <h1>Ajouter un film</h1>
+        <div class="formulaire">
+            {{ form_start(form) }}
+                <div class="row">
+                    <div class="col-12 col-md-6">
+                        {{ form_row(form.title) }}
+                    </div>
+                    <div class="col-12 col-md-6">
+                        {{ form_row(form.releaseYear) }}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 col-md-6">
+                        {{ form_row(form.genre) }}
+                    </div>
+                    <div class="col-12 col-md-6">
+                        {{ form_row(form.director) }}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        {{ form_row(form.synopsis) }}
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-sm btn-primary mt-3">Enregistrer</button>
+            {{ form_end(form) }}
+        </div>
+    </div>
+</div>
+{% endblock %}

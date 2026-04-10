@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste des réalisateurs{% endblock %}
+
+{% block body %}
+<h1>Liste des réalisateurs</h1>
+<div class="example-wrapper">
+    <ul>
+    {% for director in directors %}
+        <li>
+            <a href="{{ path('director_detail', {id: director.id}) }}">
+                {{ director.firstName }} {{ director.lastName }}
+            </a>
+        </li>
+    {% endfor %}
+    </ul>
+</div>
+{% endblock %}

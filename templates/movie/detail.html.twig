@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ movie.title }} ({{ movie.releaseYear }}){% endblock %}
+
+{% block body %}
+<h1>{{ movie.title }} ({{ movie.releaseYear }})</h1>
+<small><a href="{{ path('director_detail', {id: movie.director.id }) }}">{{ movie.director.firstName }} {{ movie.director.lastName }} </a></small>
+<div class="example-wrapper">
+    <a href="{{ path('movies_list_par_genre', {genre: movie.genre}) }}">{{ movie.genre }}</a>
+    <p>{{ movie.synopsis }}</p>
+</div>
+{% endblock %}
