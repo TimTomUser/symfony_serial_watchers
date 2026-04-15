@@ -6,8 +6,21 @@ use App\Repository\MovieRepository;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
+use ApiPlatform\Metadata\ApiResource;
+use ApiPlatform\Metadata\Get;
+use ApiPlatform\Metadata\GetCollection;
 
+#[ApiResource(
+    operations: [
+        new GetCollection(),
+        new Get(),
+     
+    ],
+    normalizationContext: ['groups' => ['movie:read']],
+
+    )]
 #[ORM\Entity(repositoryClass: MovieRepository::class)]
+#[ORM\table(name: 'Movie')]
 class Movie
 {
     #[ORM\Id]

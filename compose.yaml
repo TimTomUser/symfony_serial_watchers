@@ -3,9 +3,9 @@ services:
     image: mariadb:11
     environment:
       MARIADB_ROOT_PASSWORD: root
-      MARIADB_DATABASE: serial_watchers
-      MARIADB_USER: serial_watchers_user
-      MARIADB_PASSWORD: serial_watchers_pwd
+      MARIADB_DATABASE: symfony_serial_watchers
+      MARIADB_USER: symfony_serial_watchers_user
+      MARIADB_PASSWORD: symfony_serial_watchers_pwd
     volumes:
       - database_data:/var/lib/mysql
     ports:
